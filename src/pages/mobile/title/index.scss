@@ -1,0 +1,21 @@
+.title-page {
+    
+    height: 100vh;
+    width: 100vw;
+
+    &__content{
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        margin-top: 15px;
+    }
+
+    &__button-section{
+        margin-top: 35px;
+        position: relative;
+    }
+}
+
+@media screen and (max-width:320px) {
+    
+}

@@ -1,0 +1,22 @@
+.invite-button {
+    margin-top: 14px;
+    display: flex;
+    align-items: center;
+
+    &__caption {
+        color: #FFC300;
+        font-weight: 400;
+        font-size: 18px;
+        font-family: "Ubuntu";
+    }
+
+    &__img{
+        width: 26px;
+        height: 12px;
+        margin-left: 15px;
+        margin-top: 1px;
+        background-repeat: no-repeat;
+        background-size: cover;
+        background-image: url('../../../../public/assets/images/Arrow_right.png');
+    }
+}

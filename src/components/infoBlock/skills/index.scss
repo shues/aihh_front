@@ -1,0 +1,29 @@
+.skills{
+
+    margin-top: 15px;
+
+    &__header{
+        font-family: 'Ubuntu';
+        font-size: 16px;
+        font-weight: 500;
+        color: white;
+    }
+
+    &__list{
+        font-family: 'Ubuntu';
+        font-style: normal;
+        font-size: 15px;
+        font-weight: 300;
+        color: white;
+
+        display: flex;
+        flex-wrap: wrap;
+
+        margin-top: 4px;
+
+        &-item{
+            margin-right: 10px;
+            margin-bottom: 10px;
+        }
+    }
+}

@@ -1,24 +1,39 @@
-import logo from './logo.svg';
-import './App.css';
+import './App.scss';
+import React from 'react';
 
-function App() {
+import { Provider } from 'react-redux';
+
+import VisibleTitlePageMobile from './redux/conteiners/visibleTitlePageMobile';
+import { Waiter } from './components/waiter';
+import VisibleContentPageMobile from './redux/conteiners/visibleContentPageMobile';
+
+function App(props) {
+  React.useEffect(() => {
+    props.setDeviceType(window.innerWidth);
+    const search = document.location.search;
+    if (search !== '') {
+      const access_token = search.split('&')[0].split('=')[1];
+      const social = search.split('&')[1].split('=')[1];
+      props.setAccessToken(access_token, social);
+    }
+  },[props.deviceType]);
+
+  let page = null;
+
+  if (!props.authorized) {
+    if (props.deviceType === 'mobile') {
+      page = <VisibleTitlePageMobile />;
+    }
+  }else{
+    if (props.deviceType === 'mobile') {
+      page = <VisibleContentPageMobile />;
+    }
+  }
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <Provider store={props.store}>
+      <div className="App">{page}</div>
+      <Waiter active={props.fetching} />
+    </Provider>
   );
 }
 

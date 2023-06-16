@@ -1,0 +1,43 @@
+.waiter{
+
+    height: 50px;
+    width: 50px;
+    background-color: transparent;
+    border-top: 3px solid #062f5b;
+    border-right: 3px solid transparent;
+    border-bottom: 3px solid transparent;
+    border-left: 3px solid transparent;
+    display: flex;
+    border-radius: 30px;
+
+    &__wrapper{
+        display: none;
+
+        &_active{
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100vw;
+            height: 100vh;
+            background-color: rgba($color: #ffffff, $alpha: 0.5);
+        }
+    }
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  .waiter {
+    animation: waiter-spin infinite 1s linear;
+  }
+}
+
+@keyframes waiter-spin {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}

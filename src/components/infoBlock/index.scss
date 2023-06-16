@@ -1,0 +1,14 @@
+.info-block {
+    margin-bottom: 20px;
+    width: 254px;
+    min-height: 150px;
+    background-color: #02346d;
+    border-radius: 35px 0;
+    padding: 25px 18px;
+
+
+    &__header {
+        display: flex;
+        align-items: center;
+    }
+}

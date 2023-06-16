@@ -1,0 +1,50 @@
+.button {
+    width: 205px;
+    height: 42px;
+    background-color: #ffc300;
+    border-radius: 15px;
+    margin-bottom: 15px;
+    display: flex;
+    flex-direction: row;
+
+    // padding-left: 12px;
+    // justify-content: center;
+    align-items: center;
+
+    &_clicked{
+        background: linear-gradient(90deg, #FFC300 0%, #FF9900 100%);
+    }
+
+    &__img {
+
+        background-repeat: no-repeat;
+        background-size: cover;
+        margin-right: 10px;
+        margin-left: 12px;
+
+
+        &_vk {
+            height: 13px;
+            width: 22px;
+            background-image: url('../../../../public/assets/images/vk.svg');
+        }
+
+        &_discord {
+            height: 16px;
+            width: 21px;
+            background-image: url('../../../../public/assets/images/discord.svg');
+        }
+
+        &_telegram {
+            height: 18px;
+            width: 23px;
+            background-image: url('../../../../public/assets/images/telegram.svg');
+        }
+    }
+
+    &__caption {
+        font-size: 15px;
+        font-weight: 500;
+        color: #00274e;
+    }
+}
